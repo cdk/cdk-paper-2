@@ -10,5 +10,7 @@ that I post-print versions can be archived (just not as the publisher PDF). So h
 
 Steinbeck, Christoph; Hoppe, Christian; Kuhn, Stefan; Floris, Matteo; Guha, Rajarshi; Willighagen, Egon L.
 
+## Abstract
 
+The Chemistry Development Kit (CDK) provides methods for common tasks in molecular informatics, including 2D and 3D rendering of chemical structures, I/O routines, SMILES parsing and generation, ring searches, isomorphism checking, structure diagram generation, etc. Implemented in Java, it is used both for server-side computational services, possibly equipped with a web interface, as well as for applications and client-side applets. This article introduces the CDK's new QSAR capabilities and the recently introduced interface to statistical software.
 
