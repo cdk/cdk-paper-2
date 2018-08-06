@@ -192,8 +192,31 @@ Java library for chemo- and bioinformatics. J Chem Inf Comput Sci 2003; 43: 493-
 23. Wiener H. Correlation of Heat of Isomerization and Difference in Heat of Vaporization of Isomers Among Paraffin Hydrocarbons. J Am Chem Soc 1947; 69: 17-20.
 24. Gutman I, Ruscic B, Trinajstic N, Wilcox Jr C. Graph Theory and Molecular Orbitals. XII. Acyclic Polyenes. J Chem Phys 1975; 62:3399-3405.
 25. Petitejean M. Applications of the Radius Diameter Diagram to the Classification of Topological and Geometric Shapes of Chemical Compounds. J Chem Inf Comput Sci 1992; 32: 331-337.
-26. Kier L. A Shape Index from Molecular Graphs. Quant Struct.-Act Relat Pharmacol Chem Biol 1985; 4: 109-116.
+26. Kier L. A Shape Index from Molecular Graphs. Quant Struct.-Act Relat Pharmacol Chem Biol 1985; 4:109-116.
 27. Kier L. Shape Indexes for Orders One and Three from Molecular graphs. Quant Struct-Act Relat Pharmacol Chem Bio 1986; 5: 1-7.
+28. Kier L. Distinguishing Atom Differences in a Molecular Graph Index. Quant Struct-Act Relat Pharmacol Chem Bio 1986; 5: 7-12.
+29. Katritzky A, Mu L, Lobanov V, Karelson M. Correlation of Boiling Points with Molecular Structure. 1. A Training Set of 298 Diverse Organics and a Test Set of 9 Simple Inorganics. J Phys Chem 1996; 100:10400-10407.
+30. Goldstein H. Classical Mechanics; Addison Wesley: Reading, MA, 1950.
+31. Pearlman R, Smith K. M. Novel Software Tools for Chemical Diversity. Perspect Drug Disc Des 1998; 9:339-353.
+32. Pearlman R, Smith K. Metric Validation and Receptor Relevant Subspace Concept. J Chem Inf Comput Sci 1999; 39:28-35.
+33. Todeschini R, Lasagni R, Marengo E. New Molecular Descriptors for 2D and 3D Structures. Theory. J Chemometrics 1994; 8: 263-273.
+34. Todeschini R, Grammatica P. 3D Modelling and Prediction by WHIM Descriptors. Part 5. Theory, Development and Chemical Meaning of WHIM Descriptors. Quant Struct Act Relat 1997; 16:113-119.
+35. Ertl P, Rohde B, Selzer P. Fast Calculation of Molecular Polar Surface Area as a Sum of Fragment Based Contributions and Its Application to the Prediction of Drug Transport Properties. J Med Chem 2000; 43: 3714-3717.
+36. Burden F. Molecular Identification Matrix for Substructure Searches. J Chem Inf Comput Sci 1989; 29: 225-227.
+37. Murray-Rust P, Rzepa H. Chemical Markup XML, and the World-wide Web. 1. Basic Principles. J Chem Inf Comp Sci 1999; 39:
+928-942.
+38. Murray-Rust P, Rzepa H. Chemical Markup XML, and the World-wide Web. 2. Information Objects and the CMLDOM. J Chem Inf Comp Sci 2001; 41: 1113-1123.
+39. Witten I, Frank E. Data Mining: Practical machine learning tools with Java implementations; Morgan Kaufmann: San Francisco 2000.
+40. "SJava", http://www.omegahat.org/RSJava/, accessed on Feb 2005.
+41. Guha R. Using the CDK as a backend to R. CDK News 2005; 2:2-6.
+42. "Binary Fingerprint Tools", http://blue.chem.psu.edu/~rajarshi/code/R, accessed on Feb 2005.
+43. Kaufman L, Rousseeuw P. Finding Groups in Data: An Introduction to Cluster Analysis; Wiley: New York 1990.
+44. Guha R. Using R to provide statistical functionality for QSAR modeling in CDK. CDK News 2005; 2: 2-6.
+45. Sadowski J. 3D Structure Generation; volume 1 of Handbook of Chemoinformatics Wiley-VCH 2003.
+46. Halgren T. Merck Molecular Force Field. I. Basis, Form, Scope,Parameterization, and Performance of MMFF94*. J Comp Chem 1996; 17: 490-519.
+47. Ihlenfeldt W, Takahasi Y, Abe H, Sasaki S. CACTVS: A Chemistry Algorithm Development Environment; Daijuukagakutouronkai Dainijuukai Kouzoukasseisoukan Shin-pojiumu Kouenyoushishuu Kyoto University Press 1992.
+48. "The JChemPaint Structure Editor", http://jchempaint.sf.net/, accessed Feb 2005.
+49. "The Jmol 3D Molecular Visualization Software", http://www.jmol.org/, accessed Feb 2005.
 
 
 
