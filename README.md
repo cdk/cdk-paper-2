@@ -67,8 +67,7 @@ Chemical Metadata in RSS Aggregators. J Chem Inf Comput Sci 2004; 44: 462-469.
 Java library for chemo- and bioinformatics. J Chem Inf Comput Sci 2003; 43: 493-500.
 15. R Development Core Team, "R: A language and environment for statistical computing", R Foundation for Statistical Computing, Vienna, Austria 2004 ISBN 3-900051-07-0.
 16. Meiler J. PROSHIFT: Protein chemical shift prediction using artificial neural networks. J Biomol NMR 200i3: 26: 25-37.
-17. De Sousa A, Hemmer M, Gasteiger J. Prediction of 1H-NMR Chemical Shifts Using Neural Networks. Anal Chem 2002; 74: 80-
-90.
+17. De Sousa A, Hemmer M, Gasteiger J. Prediction of 1H-NMR Chemical Shifts Using Neural Networks. Anal Chem 2002; 74: 80-90.
 18. Lipinski CA, Lombardo F, Dominy BW, Feeney PJ. Experimental and Computational Approaches to Estimate Solubility and Permeability in Drug Discovery and Development Settings. Adv Drug Deliv Rev 1997; 23: 3-25.
 19. Wang R, Lai L. A New Atom-Additive Method for Calculating Partition Coefficients. J Chem Inf Comput Sci 1997; 37: 615-621.
 20. Kier L, Hall L, Murray W. Molecular connectivity I: Relationship to local anesthesia. J Pharm Sci 1975; 64.
