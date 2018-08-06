@@ -215,6 +215,52 @@ topological surface area descriptor is shown below:
 </propertyList>
 ```
 
+Clearly, a large amount of detailed information is available for a given descriptor. For example, the above excerpt
+indicates the CDK class used to calculate the descriptor, the
+implementor identifier and vendor. Finally, the actual value
+of the descriptor along with its name and a dictionary key are
+indicated in the <scalar> entry.
+ 
+## Interfacing the CDK framework with statistical software
+
+As reported above, the CDK was recently enhanced by
+the addition of a number of molecular descriptor classes. The
+goal of these classes was to allow the use of the CDK
+framework in QSAR modeling environments. However,
+molecular descriptors are only one part of the process of
+building QSAR models. A vital component of a QSAR
+modeling framework consists of statistical and mathematical
+modeling capabilities. As a result, a recent addition to the
+CDK was an interface that would allow the CDK to be integrated
+with statistical and mathematical software for the purposes
+of QSAR modeling. The goal of this statistical interface
+is to allow the user of the CDK to employ a statistical
+package (such as R [15], Matlab, Weka [39], SAS) to develop
+QSAR models using chemical information generated
+(or processed) by the CDK.
+ 
+In the context of interfacing the CDK with statistical environments,
+there are two possible scenarios. First, we may
+consider the situation where the CDK is used to provide
+chemoinformatics functionality within a statistical environment.
+Second is the situation where the CDK uses a statistical
+environment to provide statistical and mathematical
+functionality to the user of the CDK framework. Recent
+work allows the CDK to be used in both cases, using R as
+the statistical environment. R is a language and environment
+for statistical computing and graphics [15]. It is a GNU project
+which is similar to the S language and environment
+which was developed at Bell Laboratories (formerly AT&T,
+now Lucent Technologies) by John Chambers and colleagues.
+R can be considered as a different implementation
+of S. R provides a wide variety of statistical (linear and
+non-linear modelling, classical statistical tests, time-series
+analysis, classification, clustering, ...) and graphical techniques,
+and is highly extensible. The S language is often the vehicle
+of choice for research in statistical methodology, and R
+provides an open source route to participation in that activity.
+
+
 ...
 
 
