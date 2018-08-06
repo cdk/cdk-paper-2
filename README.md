@@ -158,6 +158,62 @@ application. This would allow easy access to descriptor
 functionality (both numeric data as well meta-data) for web
 oriented services.
 
+To conclude this section we present code snippets which
+show the ease with which sets of descriptors can be calculated and an example from the CML output of such a
+calculation, exhibiting descriptor values and associated meta-data.
+To calculate all available descriptors, one simply instantiates
+the DescriptorEngine class and calls the process method:
+
+```java
+DescriptorEngine engine = new DescriptorEngine();
+engine.process(molecule);
+```
+
+In case a subset, such as topological and electronic descriptors, are required, a simple modification of the
+preceding code will suffice:
+
+```java
+String[] types = {"topological","geometric"};
+DescriptorEngine engine = new DescriptorEngine(types);
+engine.process(molecule);
+```
+
+Finally, single descriptor values are calculated using the
+following scheme:
+
+```java
+Descriptor descriptor = new XLogPDescriptor();
+Object [] params = {new Boolean(true)};
+descriptor.setParameters(params);
+double xLogP = ((DoubleResult)descriptor
+ .calculate(mol).getValue()).doubleValue();
+```
+
+In all of these examples the molecule variable is an object
+that encapsulates information about a molecule (atoms,
+bonds etc.). The important feature here is that the descriptor
+information (values and meta-data) is stored within the object. This information can be accessed using keys which are
+defined by the descriptor classes. To utilize the calculation
+results, the information can be extracted and written out in
+the CML format. An excerpt from the output of a calculation, showing the results from the calculation of the
+topological surface area descriptor is shown below:
+
+```xml
+<propertyList>
+  <property xmlns:qsardict="http://qsar.sourceforge.net/dicts/qsar-descriptors">
+    <metadataList xmlns:qsarmeta="http://qsar.sourceforge.net/dicts/qsar-descriptors-metadata">
+     <metadata dictRef="qsarmeta:implementationTitle" content="org.openscience.cdk.qsar.TPSADescriptor"/>
+     <metadata dictRef="qsarmeta:implementationIdentifier"
+               content="$Id: cdk-article.tex,v 1.62 2005/02/28 15:07:21 stein Exp $"/>
+     <metadata dictRef="qsarmeta:implementationVendor" content="The Chemistry Development Kit"/>
+     <metadataList title="qsarmeta:descriptorParameters">
+       <metadata title="useAromaticity" content="false"/>
+     </metadataList>
+   </metadataList>
+   <scalar dataType="xsd:double"dictRef="qsardict:tpsa">34.14</scalar>
+  </property>
+</propertyList>
+```
 
 ...
 
