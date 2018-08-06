@@ -263,6 +263,83 @@ provides an open source route to participation in that activity.
 
 ...
 
+For cyclic systems we followed a knowledge-based 
+approach in collecting and storing unique ring systems
+(ignoring different conformations) to use them as templates in the
+3D structure generation process [45]. Therefore we 
+downloaded a collection of small molecules as MOL files from the
+NCI databank (http://cactus.nci.nih.gov/ncidb2/download.html) [47].
+To extract the molecule data stored in this file
+(249,071 3D-structures) the IteratingMDLReader from the
+CDK software package was used. Using various CDK
+functions, the ring systems are identified and partitioned into
+connected rings which share at least an atom, a bond or three
+or more atoms with another ring. After a scan of all 249,071
+NCI molecules, we collected 11,610 unique ring systems.
+
+In order to build a 3D structure for a new modeling
+candidate, we first examined its molecular structure for the
+existence of one of the template ring systems. If a template ring
+system can be identified, its coordinates were assigned to the
+modeling candidate and aliphatic chains were layed out
+thereafter. Currently, molecules with unknown ring systems
+cannot be handled by this approach. For these cases, we are
+currently implementing a distance geometry algorithm.
+
+To test robustness, the ability to use big files, to check for
+variety of chemical types and to check for the conversion
+rate we use the structures submitted in the NMRShiftDB [7].
+
+From these 11,064 molecules about 17% could not be
+converted due to ring system problems. The method needs
+on average 0.5 sec/molecule (Intel Pentium 2.66GHz,
+512KB cache, 1GB RAM).
+
+# Conclusion
+
+We have presented two new capabilities recently
+introduced in the Chemistry Development Kit (CDK) related to
+drug design. The CDK is available to the public at
+http://cdk.sourceforge.net/. Its new ability to compute 3D starting
+geometries in a quick model building step will propel the
+current development of force field methods within the CDK.
+Those, again, will aid our efforts to create a molecular
+docking environment based on the CDK - an area of
+pharmaceutical chemoinformatics, which is clearly underrepresented
+in the current package. The inclusion of molecular descriptors
+and the ability to interface with the open source statisti-
+cal software package, R, now provides QSAR modelling
+capabilities which are essential for the use of the CDK in a
+pharmaceutical chemoinformatics context.
+
+A lot of new functionality has been added to the CDK
+since our last report on the toolkit in a scientific journal [14].
+For more technical references, the authors would like to
+point the interested reader to the "CDK News" (ISSN 1614-7553),
+which was established in the middle of 2004 and is
+currently seeing its fifth issue. The CDK News can be
+downloaded from http://cdk.sourceforge.net/ in PDF format.
+It is focused on publishing articles that provide practical and
+detailed guidelines and examples on the use of specific CDK
+functionality, updates on newly added features and links to
+articles and projects related to the CDK. In addition to the
+above mentioned documentation, a showcase web application
+for CDK functionality has been created at http://www.chemistry-development-kit.org/. This web site allows the
+user to easily create molecular structures via file upload or
+by pasting SMILES, and to apply various CDK functions on
+them. While the Chemistry Development Kit is already used
+in a variety of academic and commercial software projects,
+the extensions reported in this article are expected to widen
+the scope and use of the CDK even further.
+
+# Acknowledgment
+
+The authors would like to thank all members of the CDK
+project for their contributions, corrections and helpful
+comments, and Jörg Wegner for discussion of the design of the
+QSAR interfaces. Financial support for CS, CH, MF and SK
+from the German Federal Ministry of Education and Research
+(BMBF) is highly acknowledged.
 
 # References
 
