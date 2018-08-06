@@ -43,6 +43,122 @@ prominent areas. Recently, this situation has changed significantly. The enormou
 ences such as large scale genomics, proteomics and metabolomics projects has only been possible because it was
 supported by a bioinformatics software culture of openness.
 
+From the very beginning, there was an understanding that
+communal progress could only been made if tools were
+openly shared and if people were freed from wasting productivity by reinventing the wheel again and again. This
+culture of openness has clearly influenced the research
+community in chemistry which has now widely adopted it
+and continues to publish high quality, peer-reviewed software under open source licenses at a good rate.
+Here we report recent advancements of the Chemistry
+Development Kit (CDK), an open source Java library for
+structural chemo- and bioinformatics. The CDK originated in
+the lab of one of us (CS) but was quickly adopted by a community of researchers and is now an actively developed open
+source project supported by more than 30 contributors
+world-wide. The CDK is used in a number of academic and
+commercial chemoinformatics projects [5-13]. Access to
+source code and documentation is provided via http://cdk.sourceforge.net/. We have discussed the general architecture
+of the Chemistry Development Kit in an earlier article [14].
+An overview of CDK's basic capabilities is given in Fig. 1.
+Here, we will focus on recent advancements of CDK in
+areas of interest for pharmaceutical design, such as the ability to compute molecular descriptors and the ability to interface with the open source statistics package R [15].
+
+## Molecular Descriptors
+
+The function of a chemoinformatics toolkit, by definition,
+is to represent, generate and process chemical information.
+One such source of information may be found in molecular
+descriptors. These are sets of numeric values that mathematically characterize the structure and environment of a
+molecule. Molecular descriptors are used in a number of areas
+such as database searching and QSAR modeling. Recently,
+one line of work on the CDK project has been to focus on
+features that would make it useful for inclusion in QSAR
+modeling environments. To this end a number of molecular
+descriptor routines have been added to the framework. Table
+1 gives an overview of descriptors currently implemented in
+the CDK. This section discusses the general design of the
+descriptor package.
+
+A fundamental decision made in the design of the package was to supplement descriptor implementations with
+meta-data. In this context, meta-data includes information
+regarding the author (called vendor), version and title of the
+implementation, and a reference to the dictionary describing
+the descriptors. Descriptor entries in this dictionary contain
+information such as a reference to original literature, mathematical formulae describing the descriptor, links to related
+descriptors, and other details on the exact algorithm used to
+calculate descriptor values. These dictionaries are not specific to the CDK but are developed within an independent
+open source QSAR project (http://qsar.sf.net/) and the descriptor and meta-data dictionaries are available online from
+this project.
+
+The goal of the meta-data is to allow the user to determine information regarding the descriptor as well as the
+descriptor value itself. This is important, since in many cases
+descriptor implementations and definitions are separate. As a result, one ends up with a large set of numbers which are not
+closely tied to meaning. The inclusion of meta-data in the
+CDK descriptor implementations alleviates this problem.
+Another example of the use of meta-data is to differentiate
+between descriptors that return different types of values. For
+example the BCUT [31] descriptors are essentially the n
+highest and lowest eigenvalues of the weighted Burden matrix [36]. Hence the descriptor value is a vector of numbers.
+On the other hand constitutional descriptors, such as the
+count of halogen atoms, return a single number. The use of
+descriptor meta-data allows the user to identify the nature of
+the return values of different descriptors.
+
+An important use of the meta-data dictionaries is to allow, in conjunction with namespaces, multiple
+implementations of a given descriptor to coexist. This is important in
+applications where a user already has descriptor routines
+(which may clash with descriptor routines present in the
+CDK) and would like to include them in the CDK framework. The use of meta-data allows different programs to
+calculate descriptors from the dictionaries, and then mark the
+calculated descriptor values with implementation details, so
+that clashes will not occur.
+
+To allow for easy inclusion of new descriptor routines, a
+Descriptor interface was created (see Fig. 2). This interface
+describes a number of methods that each descriptor must
+implement. These include methods to perform the calcula-
+tion, set parameters, extract meta-data and so on. Hence each
+descriptor routine is a Java class that implements this inter-
+face. The design of the descriptor package as a set of classes
+allows for the automated calculation of descriptors. This is
+achieved by a compile time feature, which recognizes im-
+plemented descriptor classes (via JavaDoc tags) and builds a
+list of these classes. This list is then available at runtime,
+allowing the user to use all or a subset of the available de-
+scriptors. As a result new descriptor routines can simply be
+placed in the correct location of the class hierarchy and a
+recompile of the CDK will result in the new routines being
+automatically available.
+
+Another feature of the descriptor package is the uniform
+treatment of descriptor return values. Different descriptors
+will return different types of information. For example, a
+constitutional descriptor such as the count of carbon atoms
+returns a single number whereas the gravitational index descriptor returns nine values. Other descriptors (such as
+BCUT) return a variable number of values. To allow for uniform access to the descriptor return values, all descriptors
+return a class implementing the DescriptorResult interface.
+Currently five classes are present in the org.openscience.
+cdk.qsar.result package implementing three simple and two
+complex return types (see Fig. 3). As a result of this design,
+all descriptors return a uniform value, which can be inspected to correctly obtain the actual calculated values.
+
+Once descriptors are calculated we need to consider the
+question of storing the results. In many cases descriptors will
+be calculated for a set of molecules and further processing
+will be carried out within the program. However, a useful
+feature is persistence of calculated values. A trivial approach
+is to write the descriptor values and associated meta-data to a
+plain text file. However a more structured approach is the
+use of CML [37, 38], a subset of XML designed to encapsulate chemical information. The CDK contains functionality
+to store descriptor data in CML formatted files. This leads to
+easy transfer of data between CML enabled applications. The
+easy conversion of descriptor values and associated metadata
+to CML format also opens up the possibility of the use the
+CDK descriptor package as a component of a web service
+application. This would allow easy access to descriptor
+functionality (both numeric data as well meta-data) for web
+oriented services.
+
+
 ...
 
 
