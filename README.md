@@ -267,6 +267,127 @@ and is highly extensible. The S language is often the vehicle
 of choice for research in statistical methodology, and R
 provides an open source route to participation in that activity.
 
+This section will describe some details of the use of the
+CDK framework as a chemoinformatics backend in a
+statistical environment and the reverse situation - the use of R as a
+statistical backend to the CDK framework.
+
+### Requirements
+
+The underlying mechanism that allows the CDK
+framework to be interfaced with the R environment is the SJava
+[40] package for R that provides a bridge between Java
+programs in general and the R environment. The SJava package
+allows the use of Java classes and methods in an R session as
+well as access to R functions from Java code.
+The use of the CDK within R is relatively straight forward
+as SJava provides methods to access Java objects and
+to associate methods in a similar fashion to R objects and
+function calls. The reverse case is a little more involved and
+requires some infrastructure to be developed on both the Java
+side and R side.
+
+### Accessing the CDK from within R
+
+We discuss the use of the CDK framework from within R
+by example. First, we consider a clustering of binary
+fingerprints and then we consider the calculation of molecular
+descriptors using the CDK. In the following discussion we
+show some examples of the code that performs these tasks.
+Further details may be found in reference [41].
+
+The CDK framework implements a binary fingerprint
+algorithm based on a path generation step, followed by
+hashing the path strings and projecting the hash numbers on
+a bit string using a pseudo random number generator seeded
+by the previously computed hash numbers. Fingerprints
+allow the user to rapidly calculate a structural representation of
+the molecule and have been shown to be a very useful tool
+for clustering molecular structures. A wide variety of
+clustering algorithms are available and R implements a number
+of them.
+
+In this example, our aim is to calculate fingerprints for a
+set of molecules and then use these fingerprints to perform a
+clustering. The default values for bit length (1024) and path
+length (6) were used to generate the fingerprints. The first
+step is to load a molecular structure file. This can be
+achieved by the following R code:
+
+```R
+filereader <- .JNew('FileReader', .JNew('File',f) )
+reader <- .Java(.JNew('ReaderFactory'), 'createReader', filereader)
+content <- .Java(reader,'read', .JNew('ChemFile'))
+container <- .Java('ChemFileManipulator', 'getAllAtomContainers', content)
+```
+
+It is clear that the sequence of calls to the CDK functions
+are very similar to what would be used if one were loading a
+structure file from a Java program. In fact, Java code written
+using the CDK can generally be converted very easily to R
+with the help of the “JNew and” Java functions provided by
+the S Java package. The result of the above code is that the R
+variable container contains a reference to the Java object
+representing the structure information for the molecule (or
+molecules) contained in the file. It should be noted that this
+variable cannot, in general, be used by other R functions,
+unless they are designed to manipulate Java objects. In this
+case we will be manipulating the structures with the help of
+the CDK and thus, we rely on the SJava package to handle
+the details of transferring data between R and Java.
+
+Once we have loaded the structure information, we can
+then extract each molecule from the array and then evaluate
+the fingerprint for that molecule. This can be accomplished
+by the following two lines:
+
+```R
+molecule <- .JavaGetArrayElement(container,0)
+fp <- .Java('Fingerprinter','getFingerprint', molecule)
+```
+
+The first line retrieves the first structure stored in the
+array, using the. JavaGetArrayElement function provided by
+SJava and then calculates the fingerprint with the default
+values mentioned above. At this stage the fingerprint is
+actually a Java Bitset object and, as described above, cannot be
+directly manipulated in R. To get around this we can convert
+this object to a Java String, which is automatically converted
+to an R character vector. The resultant character vector
+requires some simple processing, the result of which is a
+numeric vector that specifies which bit positions were set in the
+fingerprint.
+
+The above procedure can be repeated for a set of mole-
+cules by creating an R function. The result of this would be
+to obtain a set of fingerprint vectors. These may then be
+manipulated within R using the fingerprint tools package [42]
+for R to obtain a similarity matrix. This matrix is to be used
+as input to the various clustering routines (such as pam,
+agnes, and hclust) available in R. Fig. 4 shows the silhouette
+plot [43] obtained from a clustering (using the pam [43]
+algorithm) of a set of molecules using binary fingerprints. The
+plot indicates the quality of clustering, as measured by the
+extent of cluster structure detected by the algorithm and
+graphically characterizes the silhouette values, (si). In
+general higher values of si indicate stronger membership to the
+assigned class and negative values indicate that an 
+observation belongs to the other class. Average values of si greater
+than 0.5 indicate the presence of reasonable structure in the
+clustering. A more detailed description of this application
+may be found in reference [41].
+
+The second application that shows how the CDK can be
+used to provide chemoinformatics support in a general
+statistical environment is the calculation of molecular descrip-
+tors for use in subsequent modeling (such as linear
+regression models). As before, the procedure to access the CDK
+descriptor functionality from within R is very similar to the
+steps required in a corresponding Java program. We have
+already described how one may load a structure file using the
+CDK, so we concern ourselves with calculating a molecular
+descriptor for a given structure.
+
 
 ...
 
