@@ -597,6 +597,14 @@ libraries required to support various statistical functionality
 used by the CDK are also loaded. Further details of the
 low level design of this interface may be found in reference [44].
 
+**Table 2:** A summary of the wrapper and front end classes currently implemented in the CDK and the R objects that they represent.
+
+| Type of Class | Class Name                   | R Equivalent      |
+|---------------|------------------------------|-------------------|
+| Wrapper       | LinearRegressionModelFit     | lm object         |
+|               | LinearRegressionModelPredict | lm.predict object |
+| Front end     | LinearRegressionModel        | lm function       |
+
 The CDK-R interface described above provides access to
 the full functionality of the R environment. This access 
 requires infrastructure to be implemented on the CDK side (in
