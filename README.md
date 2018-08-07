@@ -385,8 +385,194 @@ already described how one may load a structure file using the
 CDK, so we concern ourselves with calculating a molecular
 descriptor for a given structure.
 
+Since molecular descriptors are designed as individual
+classes, we first create an instance of the descriptor and then
+call its calculate method to obtain the result.
 
-...
+```R
+desc <- .JavaConstructor('GravitationalIndexDescriptor')
+value <- .Java(desc, 'calculate', molecule)
+```
+
+Here, molecule is the variable that contains the structure
+loaded from molecular structure file. As mentioned above,
+the design of the descriptor package in the CDK framework
+is very general. As a result all descriptors return uniform
+objects, which must be inspected to access the actual result
+of the calculation. Simple R functions may be written to hide
+this aspect from the casual user. By providing a number of
+descriptor names, a large pool of descriptors can be
+calculated automatically and then used in subsequent calculations.
+
+Since the main purpose of descriptor calculation is
+further use in statistical modeling, information regarding the
+descriptors may also be required to be carried over into the
+modeling environment. Currently, there are no fixed 
+guidelines on how this should be managed. This aspect is also
+connected to the naming of descriptors within the R session.
+Currently, some form of mangling must be carried out, by
+hand, on the descriptor name to obtain usable names for 
+manipulation within the R session. Future developments will let
+the R user obtain a suitable name from the CDK framework
+itself.
+
+### Accessing R from within the CDK
+
+As shown above, accessing CDK functionality from an
+external environment is relatively straightforward. The above
+discussion focused on R, but any environment that can link
+to Java libraries can use the CDK framework. In this section
+we consider how the CDK has been designed to be able to
+access external statistical packages, focusing on the interface
+with R.
+
+As before, the SJava package allows the CDK to access
+R functionality. In this case SJava wraps the R engine as a
+Java class and provides methods to call R functions from
+Java. The design of the CDK-R interface involved the
+development of some infrastructure on both the R and CDK sides.
+Much of the design was based on the problem of transferring
+Java objects to R and vice versa. Since the aim of this
+interface is to obtain statistical models from R we focus on the
+transfer of a complex R object from an R session to the
+CDK. The mechanism by which complex R objects (such as
+a linear regression or neural network model) are passed back
+to CDK is based on the use of matcher and converter
+functions on the R side and wrapper classes on the CDK side. We
+first consider the matcher and converter functions.
+
+The need for these functions arise because SJava knows
+how it should convert, say, a simple numeric variable in R to
+its corresponding Java primitive. However it does not know
+how to convert a linear regression model object to a Java
+variable. As a result, the developer must write an R function,
+which does this conversion (via wrapper classes, see below)
+and then register it with the SJava package on the R side, at
+initialization time. Thus, the developer may register several
+converter functions for different types of R objects. When
+the CDK calls an R function, the return value of the R
+function is converted to a Java type using one of the converters
+registered previously. In case multiple converter functions
+available, SJava selects a valid converter using a matcher
+function. These are simple functions that indicate which
+converter function can be used to convert a given R object to
+a Java type and essentially check the class associated with R
+objects. Since arbitrary classes can be assigned to an R ob-
+ject, this provides a lot of flexibility for the developer trying
+to return arbitrary R objects back to a CDK function. As with
+converter functions, matcher functions are also registered
+with SJava during initialization.
+
+Given converters and matchers, a CDK function is able to
+receive complex R objects from the R engine, a functionality
+managed by wrapper classes. These are CDK classes that are
+written to wrap the information contained in an R object. As
+an example consider a linear regression model object in R.
+The corresponding CDK wrapper class would contain fields
+representing the estimated coefficients, residuals, fitted
+values and so on. In addition to wrapping the information
+present in the R object, the wrapper classes must provide 
+methods to set and access these fields.
+
+At this stage we have the required infrastructure that 
+allows the CDK to call arbitrary R functions and receive 
+arbitrary R objects. With this infrastructure a user of the CDK
+framework has full access to the statistical capabilities of R.
+However, good object oriented design should hide 
+complexity. The issue of complexity arises due to the flexibility of R.
+Various R modeling routines allow data to be presented in
+multiple forms, allow the setting of various parameters and
+so on. Furthermore, the wrapper classes described above are
+really internal classes and the user should not be required to
+deal with them. This situation led to the development of front
+end classes which represent specific types of statistical 
+models. These classes allow the user to set input data and model
+parameters, build the model and then make subsequent 
+predictions using the model, essentially wrapping access to R
+modeling routines. All front end classes implement the
+Model interface. In the case of the R based modeling 
+routines, the front end classes do not directly implement the
+Model interface but are designed as subclasses of an abstract
+base class, RModel. This design is due to the initialization
+requirements of the R session. Fig. 5 shows the UML 
+diagram of the Model hierarchy. Currently, the CDK contains a
+front end class that represents linear regression models. All
+the information regarding the model itself (estimated 
+coefficients, fitted values, degrees of freedom etc.) are provided to
+the user via this front end class. As a result of this, details of
+the CDK-R interface are hidden from the user. Table 2 
+summarizes the wrapper and front end classes currently 
+implemented in the CDK and their corresponding R equivalents.
+At this point let us consider what is involved in making calls
+to R from the CDK in a little more detail. R provides a 
+number of functions for the development of various types of
+models. The return value of these functions are generally
+complex R objects. Though it would be possible to directly
+call these R functions from the CDK, the design of the CDK-R
+interface dictates that these R functions be wrapped. That
+is, rather than the CDK calling the original R function, it will
+call the wrapper R function instead. This leads to a number
+of advantages. First, this approach allows for data validation
+on the R side. For vector and matrix input, this is much more
+easily done in R than in Java. Second, if preprocessing is
+required (such as preparing a distance matrix from an input
+data matrix) this can be done in the wrapper function. Third,
+the use of the wrapper function allows the developer to 
+assign unique classes to R objects and thus allow them to be
+converted to corresponding Java objects. This is important
+when different R functions return objects of the same class.
+Without unique class assignments, the SJava package would
+not be able to determine which converter should be used to
+return the R object to the CDK. Fig. 6 summarizes the flow
+of execution in the CDK-R interface.
+
+Finally, an important aspect of the CDK-R interface is
+initialization. This stage is significant due to the fact the 
+embedded R engine is not multithreaded. The initialization
+stage ensures that only one instance of the R engine is 
+running at any time and is also responsible for loading the 
+various R wrapper functions as well as registering matcher and
+converter functions in the R session. In addition various R
+libraries required to support various statistical functionality
+used by the CDK are also loaded. Further details of the
+low level design of this interface may be found in reference [44].
+
+The CDK-R interface described above provides access to
+the full functionality of the R environment. This access 
+requires infrastructure to be implemented on the CDK side (in
+the form of wrapper classes and front end classes) as well as
+on the R side (matcher, converter and wrapper functions).
+However, due to the object oriented design of both R and
+CDK, much of the internal complexity can be hidden from
+the user of the API. Currently, the interface provides 
+modeling capabilities using linear regression. Implementing 
+support for other types of models is relatively straightforward
+and such support will appear in future versions of the CDK.
+Though the above discussion has focused on the CDK-R
+interface, the design of the QSAR modeling package in the
+CDK is general enough to allow interfaces between other
+modeling packages such as Matlab or Weka to be 
+implemented. Future work involves the development of such 
+interfaces, expanding the flexibility of QSAR modeling using the
+CDK framework.
+
+## 3D model builder
+
+In order to propel the development of 3D modelling 
+applications based on the CDK, a 3D model builder was added,
+which can quickly compute geometries for molecular models
+based solely on connectivity information. In order to do this
+we followed a common approach in the 3D structure 
+generation process [45]. In the beginning the molecule is 
+fragmented into acyclic and cyclic portions, handled separately
+and re-assembled at the end of the whole process. The 
+geometry of acyclic parts is generated by a rule- and data-based
+method. Internal coordinates, such as bond length and 
+angles, where taken from experimental or calculated data 
+collections such as the MMFF94 force field [46]. With this data
+and the assumption to generate extended chains (dihedral
+angle of 180 degrees) we create a Z-matrix for the whole
+chain, which is then converted into cartesian coordinates.
 
 For cyclic systems we followed a knowledge-based 
 approach in collecting and storing unique ring systems
