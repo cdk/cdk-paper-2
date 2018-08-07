@@ -25,6 +25,5 @@
 "","Van der Waals radii",""
 "","Number of valence electrons",""
 "","Polarizability (effective, sum, difference)",""
-"Hybrid","BCUT",""
-"","WHIM",""
+"Hybrid","BCUT, WHIM","[31-35]"
 "","Topological surface area",""
