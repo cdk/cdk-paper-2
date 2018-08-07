@@ -8,6 +8,10 @@ that I post-print versions can be archived (just not as the publisher PDF). So h
 
 Copyright (C) 2016 The Authors.
 
+Oh, and check our what [Wikidata](http://wikidata.org/) has knows about [this article with Scholia](https://tools.wmflabs.org/scholia/work/Q27065423)...
+
+---
+
 # Recent Developments of the Chemistry Development Kit (CDK) - An Open-Source Java Library for Chemo- and Bioinformatics
 
 Steinbeck, Christoph; Hoppe, Christian; Kuhn, Stefan; Floris, Matteo; Guha, Rajarshi; Willighagen, Egon L.
