@@ -1,0 +1,4 @@
+"Type of Class","Class Name","R Equivalent"
+"Wrapper","LinearRegressionModelFit","lm object"
+"","LinearRegressionModelPredict","lm.predict object"
+"Front end","LinearRegressionModel","lm function"
