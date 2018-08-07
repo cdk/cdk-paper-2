@@ -99,6 +99,40 @@ calculate descriptor values. These dictionaries are not specific to the CDK but 
 open source QSAR project (http://qsar.sf.net/) and the descriptor and meta-data dictionaries are available online from
 this project.
 
+**Table 1**: A summary of the types of descriptors currently available in the CDK.
+
+| Class          | Implemented descriptors                     | Ref.    |
+|----------------|---------------------------------------------|---------|
+| Constitutional | Atom and bond counts, molecular weight      |         |
+|                | Aromatic atom and bond counts               |         |
+|                | Hydrogen bond donor/acceptor counts         |         |
+|                | Rotatable bond count                        |         |
+|                | Proton type                                 |         |
+|                | Pi-contact of two atoms                     | [16]    |
+|                | Proton RDF                                  | [17]    |
+|                | Rule of Five                                | [18]    |
+|                | XLogP                                       | [19]    |
+| Topological    | Xₜ indices (°Xₜ and ¹Xₜ)                    | [20-22] |
+|                | Xᵥ indices (°Xᵥ and ¹Xᵥ)                    | [20-22] |
+|                | Wiener number                               | [23]    |
+|                | Zagreb index                                | [24]    |
+|                | Vertex adjacency information                |         |
+|                | Atomic degree                               |         |
+|                | Petitjean number                            | [25]    |
+|                | K shape indices (¹K,²K ,³K)                 | [26-28] |
+| Geometric      | Gravitational indices                       | [29]    |
+|                | Shortest path bond count                    | [16]    |
+|                | Moment of inertia                           | [30]    |
+|                | Distance in space                           | [16]    |
+| Electronic     | Sigma electronegativity                     |         |
+|                | Proton partial charges                      |         |
+|                | Van der Waals radii                         |         |
+|                | Number of valence electrons                 |         |
+|                | Polarizability (effective, sum, difference) |         |
+| Hybrid         | BCUT, WHIM                                  | [31-35] |
+|                | Topological surface area                    |         |
+
+
 The goal of the meta-data is to allow the user to determine information regarding the descriptor as well as the
 descriptor value itself. This is important, since in many cases
 descriptor implementations and definitions are separate. As a result, one ends up with a large set of numbers which are not
