@@ -80,7 +80,7 @@ descriptor package.
 
 <div align="center" style="border:1px solid black;">
  
-![Figure 1](images-000.jpg)
+![Figure 1](./images-000.jpg)
 
 **Figure 1**: An overview of the functionality available in the Chemistry Development Kit (CDK).
 </div>
