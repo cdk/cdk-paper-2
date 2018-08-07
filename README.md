@@ -78,12 +78,9 @@ descriptor routines have been added to the framework. Table
 the CDK. This section discusses the general design of the
 descriptor package.
 
-<div align="center" style="border:1px solid black;">
- 
 ![Figure 1](./images-000.jpg)
 
 **Figure 1**: An overview of the functionality available in the Chemistry Development Kit (CDK).
-</div>
 
 A fundamental decision made in the design of the package was to supplement descriptor implementations with
 meta-data. In this context, meta-data includes information
