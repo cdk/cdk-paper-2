@@ -62,6 +62,10 @@ An overview of CDK's basic capabilities is given in Fig. 1.
 Here, we will focus on recent advancements of CDK in
 areas of interest for pharmaceutical design, such as the ability to compute molecular descriptors and the ability to interface with the open source statistics package R [15].
 
+![Figure 1](./images-000.jpg)
+
+**Figure 1**: An overview of the functionality available in the Chemistry Development Kit (CDK).
+
 ## Molecular Descriptors
 
 The function of a chemoinformatics toolkit, by definition,
@@ -77,10 +81,6 @@ descriptor routines have been added to the framework. Table
 1 gives an overview of descriptors currently implemented in
 the CDK. This section discusses the general design of the
 descriptor package.
-
-![Figure 1](./images-000.jpg)
-
-**Figure 1**: An overview of the functionality available in the Chemistry Development Kit (CDK).
 
 A fundamental decision made in the design of the package was to supplement descriptor implementations with
 meta-data. In this context, meta-data includes information
@@ -116,6 +116,10 @@ calculate descriptors from the dictionaries, and then mark the
 calculated descriptor values with implementation details, so
 that clashes will not occur.
 
+![Figure 2](./images-001.jpg)
+
+**Figure 2**: UML diagram of the Descriptor and DescriptorResult interfacesby the interface.
+
 To allow for easy inclusion of new descriptor routines, a
 Descriptor interface was created (see Fig. 2). This interface
 describes a number of methods that each descriptor must
@@ -144,6 +148,10 @@ Currently five classes are present in the org.openscience.
 cdk.qsar.result package implementing three simple and two
 complex return types (see Fig. 3). As a result of this design,
 all descriptors return a uniform value, which can be inspected to correctly obtain the actual calculated values.
+
+![Figure 3](./images-002.jpg)
+
+**Figure 3**: UML diagram of the DescriptorResult interface and five classes from the org.openscience.cdk.qsar.result package that implement the interface.
 
 Once descriptors are calculated we need to consider the
 question of storing the results. In many cases descriptors will
@@ -355,6 +363,10 @@ requires some simple processing, the result of which is a
 numeric vector that specifies which bit positions were set in the
 fingerprint.
 
+![Figure 4](./images-003.jpg)
+
+**Figure 4**: A silhouette plot depicting the clustering of a set of moleculesthe R environment.
+
 The above procedure can be repeated for a set of mole-
 cules by creating an R function. The result of this would be
 to obtain a set of fingerprint vectors. These may then be
@@ -474,6 +486,10 @@ values and so on. In addition to wrapping the information
 present in the R object, the wrapper classes must provide 
 methods to set and access these fields.
 
+![Figure 5](./images-004.jpg)
+
+**Figure 5**: UML diagram of the Model interface, RModel and LinearRegressionModel classes.
+
 At this stage we have the required infrastructure that 
 allows the CDK to call arbitrary R functions and receive 
 arbitrary R objects. With this infrastructure a user of the CDK
@@ -526,6 +542,10 @@ not be able to determine which converter should be used to
 return the R object to the CDK. Fig. 6 summarizes the flow
 of execution in the CDK-R interface.
 
+![Figure 6](./images-005.jpg)
+
+**Figure 6**: The flow of execution in the CDK-R interface that occurs when a CDK based program uses R to obtain a statistical model.
+
 Finally, an important aspect of the CDK-R interface is
 initialization. This stage is significant due to the fact the 
 embedded R engine is not multithreaded. The initialization
@@ -573,6 +593,10 @@ collections such as the MMFF94 force field [46]. With this data
 and the assumption to generate extended chains (dihedral
 angle of 180 degrees) we create a Z-matrix for the whole
 chain, which is then converted into cartesian coordinates.
+
+![Figure 7](./images-006.jpg)
+
+**Figure 7**: A SMILES is parsed into an internal connection matrix. 2D and 3D coordinates are then generated using the StructureDiagramGenerator and the 3DModelBuilder, respectively. The depictions are generated with JChemPaint [9,48] and Jmol [49].
 
 For cyclic systems we followed a knowledge-based 
 approach in collecting and storing unique ring systems
