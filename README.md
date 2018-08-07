@@ -163,16 +163,16 @@ that clashes will not occur.
 To allow for easy inclusion of new descriptor routines, a
 Descriptor interface was created (see Fig. 2). This interface
 describes a number of methods that each descriptor must
-implement. These include methods to perform the calcula-
-tion, set parameters, extract meta-data and so on. Hence each
-descriptor routine is a Java class that implements this inter-
-face. The design of the descriptor package as a set of classes
+implement. These include methods to perform the
+calculation, set parameters, extract meta-data and so on. Hence each
+descriptor routine is a Java class that implements this 
+interface. The design of the descriptor package as a set of classes
 allows for the automated calculation of descriptors. This is
-achieved by a compile time feature, which recognizes im-
-plemented descriptor classes (via JavaDoc tags) and builds a
+achieved by a compile time feature, which recognizes 
+implemented descriptor classes (via JavaDoc tags) and builds a
 list of these classes. This list is then available at runtime,
-allowing the user to use all or a subset of the available de-
-scriptors. As a result new descriptor routines can simply be
+allowing the user to use all or a subset of the available
+descriptors. As a result new descriptor routines can simply be
 placed in the correct location of the class hierarchy and a
 recompile of the CDK will result in the new routines being
 automatically available.
