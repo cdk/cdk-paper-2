@@ -4,7 +4,7 @@ The [second paper](https://www.ingentaconnect.com/content/ben/cpd/2006/00000012/
 was published in [Current Pharmaceutical Design](http://benthamscience.com/journals/current-pharmaceutical-design/)
 with DOI [10.2174/138161206777585274](https://doi.org/10.2174/138161206777585274), and
 was not published as (CC-BY) Open Access. However, SHERPA/RoMEO [reports](http://www.sherpa.ac.uk/romeo/search.php?issn=1381-6128)
-that I post-print versions can be archived (just not as the publisher PDF). So here goes...
+that pre- or post-print versions can be archived (just not the publisher PDF). So here goes...
 
 Copyright (C) 2016 The Authors.
 
