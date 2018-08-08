@@ -68,7 +68,8 @@ the lab of one of us (CS) but was quickly adopted by a community of researchers 
 source project supported by more than 30 contributors
 world-wide. The CDK is used in a number of academic and
 commercial chemoinformatics projects [5-13]. Access to
-source code and documentation is provided via http://cdk.sourceforge.net/. We have discussed the general architecture
+source code and documentation is provided via [http://cdk.sourceforge.net/](http://cdk.sourceforge.net/).
+We have discussed the general architecture
 of the Chemistry Development Kit in an earlier article [14].
 An overview of CDK's basic capabilities is given in Fig. 1.
 Here, we will focus on recent advancements of CDK in
@@ -102,8 +103,8 @@ the descriptors. Descriptor entries in this dictionary contain
 information such as a reference to original literature, mathematical formulae describing the descriptor, links to related
 descriptors, and other details on the exact algorithm used to
 calculate descriptor values. These dictionaries are not specific to the CDK but are developed within an independent
-open source QSAR project (http://qsar.sf.net/) and the descriptor and meta-data dictionaries are available online from
-this project.
+open source QSAR project ([http://qsar.sf.net/](http://qsar.sf.net/)) and the descriptor and
+meta-data dictionaries are available online from this project.
 
 **Table 1**: A summary of the types of descriptors currently available in the CDK. Download as [CVS](table-000.csv).
 
@@ -657,7 +658,7 @@ approach in collecting and storing unique ring systems
 (ignoring different conformations) to use them as templates in the
 3D structure generation process [45]. Therefore we 
 downloaded a collection of small molecules as MOL files from the
-NCI databank (http://cactus.nci.nih.gov/ncidb2/download.html) [47].
+NCI databank ([http://cactus.nci.nih.gov/ncidb2/download.html](http://cactus.nci.nih.gov/ncidb2/download.html)) [47].
 To extract the molecule data stored in this file
 (249,071 3D-structures) the IteratingMDLReader from the
 CDK software package was used. Using various CDK
@@ -689,7 +690,7 @@ on average 0.5 sec/molecule (Intel Pentium 2.66GHz,
 We have presented two new capabilities recently
 introduced in the Chemistry Development Kit (CDK) related to
 drug design. The CDK is available to the public at
-http://cdk.sourceforge.net/. Its new ability to compute 3D starting
+[http://cdk.sourceforge.net/](http://cdk.sourceforge.net/). Its new ability to compute 3D starting
 geometries in a quick model building step will propel the
 current development of force field methods within the CDK.
 Those, again, will aid our efforts to create a molecular
@@ -707,13 +708,15 @@ For more technical references, the authors would like to
 point the interested reader to the "CDK News" (ISSN 1614-7553),
 which was established in the middle of 2004 and is
 currently seeing its fifth issue. The CDK News can be
-downloaded from http://cdk.sourceforge.net/ in PDF format.
+downloaded from [http://cdk.sourceforge.net/](http://cdk.sourceforge.net/) in PDF format.
 It is focused on publishing articles that provide practical and
 detailed guidelines and examples on the use of specific CDK
 functionality, updates on newly added features and links to
 articles and projects related to the CDK. In addition to the
 above mentioned documentation, a showcase web application
-for CDK functionality has been created at http://www.chemistry-development-kit.org/. This web site allows the
+for CDK functionality has been created at
+[http://www.chemistry-development-kit.org/](http://www.chemistry-development-kit.org/).
+This web site allows the
 user to easily create molecular structures via file upload or
 by pasting SMILES, and to apply various CDK functions on
 them. While the Chemistry Development Kit is already used
@@ -733,9 +736,9 @@ from the German Federal Ministry of Education and Research
 # References
 
 1. Russo E. Chemistry plans a structural overhaul. Naturejobs 2002; 4-7.
-2. "Daylight Chemical Information Systems, Inc.", http://www.daylight.com/, accessed on Feb 2005.
-3. "Accelrys, Inc.", http://www.accelrys.com/, accessed on Feb 2005.
-4. "Chemical Computing Group, Inc.", http://www.chemcomp.com/, accessed on Feb 2005.
+2. "Daylight Chemical Information Systems, Inc.", [http://www.daylight.com/](http://www.daylight.com/), accessed on Feb 2005.
+3. "Accelrys, Inc.", [http://www.accelrys.com/](http://www.accelrys.com/), accessed on Feb 2005.
+4. "Chemical Computing Group, Inc.", [http://www.chemcomp.com/](http://www.chemcomp.com/), accessed on Feb 2005.
 5. Steinbeck C. SENECA: A platform-independent, distributed, and parallel system for computer-assisted structure elucidation in organic chemistry. J Chem Inf Comput Sci 2001; 41: 1500-1507.
 6. Han Y, Steinbeck C. An evolutionary algorithm based strategy for computer-assisted molecular structure elucidation. J Chem Inf Comput Sci 2004; 44: 489-498.
 7. Steinbeck C, Kuhn S, Krause S. NMRShiftDB - Constructing a Chemical Information System with Open Source Components. J
@@ -745,7 +748,7 @@ Chem Inf Comput Sci 2003; 43: 1733-1739.
 10. Murray-Rust P, Rzepa H, Williamson M, Willighagen E. Chemical Markup, XML, and the World Wide Web. 5. Applications of
 Chemical Metadata in RSS Aggregators. J Chem Inf Comput Sci 2004; 44: 462-469.
 11. Wittig U, Weidemann A, Kania R, Peiss C, Rojas I. Classification of chemical compounds to support complex queries in a pathway database. Comp Funct Genom 2004; 5: 156-162.
-12. "JOELib - a java based computational chemistry package", http://joelib.sourceforge.net/, accessed on Feb 2005.
+12. "JOELib - a java based computational chemistry package", [http://joelib.sourceforge.net/](http://joelib.sourceforge.net/), accessed on Feb 2005.
 13. Zhang Y, Murray-Rust P, Dove M, Glen R, Rzepa H, Townsend J, et al. JUMBO - An XML infrastructure for eScience. Proceedings of UK e-Science All Hands Meeting 2004.
 14. Steinbeck C, Han YQ, Kuhn S, Horlacher O, Luttmann E, Willighagen E. The Chemistry Development Kit (CDK): An open-source
 Java library for chemo- and bioinformatics. J Chem Inf Comput Sci 2003; 43: 493-500.
@@ -775,16 +778,16 @@ Java library for chemo- and bioinformatics. J Chem Inf Comput Sci 2003; 43: 493-
 928-942.
 38. Murray-Rust P, Rzepa H. Chemical Markup XML, and the World-wide Web. 2. Information Objects and the CMLDOM. J Chem Inf Comp Sci 2001; 41: 1113-1123.
 39. Witten I, Frank E. Data Mining: Practical machine learning tools with Java implementations; Morgan Kaufmann: San Francisco 2000.
-40. "SJava", http://www.omegahat.org/RSJava/, accessed on Feb 2005.
+40. "SJava", [http://www.omegahat.org/RSJava/](http://www.omegahat.org/RSJava/), accessed on Feb 2005.
 41. Guha R. Using the CDK as a backend to R. CDK News 2005; 2:2-6.
-42. "Binary Fingerprint Tools", http://blue.chem.psu.edu/~rajarshi/code/R, accessed on Feb 2005.
+42. "Binary Fingerprint Tools", [http://blue.chem.psu.edu/~rajarshi/code/R](http://blue.chem.psu.edu/~rajarshi/code/R), accessed on Feb 2005.
 43. Kaufman L, Rousseeuw P. Finding Groups in Data: An Introduction to Cluster Analysis; Wiley: New York 1990.
 44. Guha R. Using R to provide statistical functionality for QSAR modeling in CDK. CDK News 2005; 2: 2-6.
 45. Sadowski J. 3D Structure Generation; volume 1 of Handbook of Chemoinformatics Wiley-VCH 2003.
 46. Halgren T. Merck Molecular Force Field. I. Basis, Form, Scope,Parameterization, and Performance of MMFF94*. J Comp Chem 1996; 17: 490-519.
 47. Ihlenfeldt W, Takahasi Y, Abe H, Sasaki S. CACTVS: A Chemistry Algorithm Development Environment; Daijuukagakutouronkai Dainijuukai Kouzoukasseisoukan Shin-pojiumu Kouenyoushishuu Kyoto University Press 1992.
-48. "The JChemPaint Structure Editor", http://jchempaint.sf.net/, accessed Feb 2005.
-49. "The Jmol 3D Molecular Visualization Software", http://www.jmol.org/, accessed Feb 2005.
+48. "The JChemPaint Structure Editor", [http://jchempaint.sf.net/](http://jchempaint.sf.net/), accessed Feb 2005.
+49. "The Jmol 3D Molecular Visualization Software", [http://www.jmol.org/](http://www.jmol.org/), accessed Feb 2005.
 
 
 
