@@ -14,7 +14,7 @@ Oh, and check our what [Wikidata](http://wikidata.org/) has knows about [this ar
 
 # Recent Developments of the Chemistry Development Kit (CDK) - An Open-Source Java Library for Chemo- and Bioinformatics
 
-Christoph Steinbeck<sup>f</sup>; Christian Hoppe<sup>f</sup>; Stefan Kuhn<sup>f</sup>; Matteo Floris; Rajarshi Guha<sup>1</sup>; Egon L. Willighagen<sup>§</sup>
+Christoph Steinbeck<sup>f</sup> <a href="https://orcid.org/0000-0001-6966-0814"><img src="orcid_16x16.png" ></a>; Christian Hoppe<sup>f</sup>; Stefan Kuhn<sup>f</sup> <a href="https://orcid.org/0000-0002-5990-4157"><img src="orcid_16x16.png" ></a>; Matteo Floris <a href="https://orcid.org/	0000-0003-4385-9336"><img src="orcid_16x16.png" ></a>; Rajarshi Guha<sup>1</sup> <a href="https://orcid.org/0000-0001-7403-8819"><img src="orcid_16x16.png" ></a>; Egon L. Willighagen<sup>§</sup> <a href="https://orcid.org/0000-0001-7542-0286"><img src="orcid_16x16.png" ></a>
 
 <sup>f</sup> Cologne University Bioinformatics Center (CUBIC), Cologne, Germany
 
