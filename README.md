@@ -8,7 +8,7 @@ that pre- or post-print versions can be archived (just not the publisher PDF). S
 
 Copyright (C) 2016 The Authors.
 
-Oh, and check our what [Wikidata](http://wikidata.org/) has knows about [this article with Scholia](https://tools.wmflabs.org/scholia/work/Q27065423)...
+Oh, and check our what [Wikidata](http://wikidata.org/) knows about [this article using Scholia](https://tools.wmflabs.org/scholia/work/Q27065423)...
 
 ---
 
