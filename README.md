@@ -105,7 +105,7 @@ calculate descriptor values. These dictionaries are not specific to the CDK but 
 open source QSAR project (http://qsar.sf.net/) and the descriptor and meta-data dictionaries are available online from
 this project.
 
-**Table 1**: A summary of the types of descriptors currently available in the CDK.
+**Table 1**: A summary of the types of descriptors currently available in the CDK. Download as [CVS](table-000.csv).
 
 | Class          | Implemented descriptors                     | Ref.    |
 |----------------|---------------------------------------------|---------|
@@ -603,7 +603,7 @@ libraries required to support various statistical functionality
 used by the CDK are also loaded. Further details of the
 low level design of this interface may be found in reference [44].
 
-**Table 2:** A summary of the wrapper and front end classes currently implemented in the CDK and the R objects that they represent.
+**Table 2:** A summary of the wrapper and front end classes currently implemented in the CDK and the R objects that they represent. Download as [CVS](table-001.csv).
 
 | Type of Class | Class Name                   | R Equivalent      |
 |---------------|------------------------------|-------------------|
