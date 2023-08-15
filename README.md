@@ -8,10 +8,53 @@ that pre- or post-print versions can be archived (just not the publisher PDF). S
 
 Copyright (C) 2016 The Authors.
 
-Oh, and check our what [Wikidata](http://wikidata.org/) knows about [this article using Scholia](https://tools.wmflabs.org/scholia/work/Q27065423)...
+Oh, and check our what [Wikidata](https://wikidata.org/) knows about [this article using Scholia](https://scholia.toolforge.org/work/Q27065423)...
 
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+        "@id": "#issue",
+        "@type": "PublicationIssue",
+        "issueNumber": "17",
+        "datePublished": "2006",
+        "isPartOf": {
+            "@id": "#periodical",
+            "@type": [
+                "PublicationVolume",
+                "Periodical"
+            ],
+            "name": "Current Pharmaceutical Design",
+            "issn": [
+                "1381-6128",
+                "1873-4286"
+            ],
+            "volumeNumber": "12"
+        }
+    },
+    {
+        "@type": "ScholarlyArticle",
+        "isPartOf": "#issue",
+        "description": "The Chemistry Development Kit (CDK) provides methods for common tasks in molecular informatics, including 2D and 3D rendering of chemical structures, I/O routines, SMILES parsing and generation, ring searches, isomorphism checking, structure diagram generation, etc. Implemented in Java, it is used both for server-side computational services, possibly equipped with a web interface, as well as for applications and client-side applets. This article introduces the CDK's new QSAR capabilities and the recently introduced interface to statistical software.",
+        "sameAs": "https://doi.org/10.2174/138161206777585274",
+        "pageEnd": "2111",
+        "pageStart": "2120",
+        "name": "Recent Developments of the Chemistry Development Kit (CDK) - An Open-Source Java Library for Chemo- and Bioinformatics",
+        "author": [
+          "Steinbeck, Christoph",
+          "Hoppe, Christian",
+          "Kuhn, Stefan",
+          "Floris, Matteo",
+          "Guha, Rajarshi",
+          "Willighagen, Egon L."
+        ]
+    }
+  ]
+}
+</script>
 # Recent Developments of the Chemistry Development Kit (CDK) - An Open-Source Java Library for Chemo- and Bioinformatics
 
 Christoph Steinbeck<sup>f</sup> <a href="https://orcid.org/0000-0001-6966-0814"><img src="orcid_16x16.png" ></a>; Christian Hoppe<sup>f</sup>; Stefan Kuhn<sup>f</sup> <a href="https://orcid.org/0000-0002-5990-4157"><img src="orcid_16x16.png" ></a>; Matteo Floris <a href="https://orcid.org/	0000-0003-4385-9336"><img src="orcid_16x16.png" ></a>; Rajarshi Guha<sup>1</sup> <a href="https://orcid.org/0000-0001-7403-8819"><img src="orcid_16x16.png" ></a>; Egon L. Willighagen<sup>§</sup> <a href="https://orcid.org/0000-0001-7542-0286"><img src="orcid_16x16.png" ></a>
